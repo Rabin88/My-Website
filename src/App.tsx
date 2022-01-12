@@ -1,11 +1,12 @@
-
+// Components
+import { Home } from "./Home";
 
 const App = () => {
   return (
-    <div>
-      <p>Hello World!</p>
-    </div>
-  )
-}
+    <>
+      <Home />
+    </>
+  );
+};
 
-export { App}
+export { App };
