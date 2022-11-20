@@ -77,6 +77,12 @@ const Portfolio = () => {
                   variant="outlined"
                   size="large"
                   sx={{ my: 4, bgcolor: "#D65A31", color: "#EEEEEE" }}
+                  onClick={() =>
+                    window.open(
+                      "https://rabin88.github.io/Personal-Website/",
+                      "_blank"
+                    )
+                  }
                 >
                   Preview
                 </Button>
@@ -107,6 +113,12 @@ const Portfolio = () => {
                   variant="outlined"
                   size="large"
                   sx={{ my: 4, bgcolor: "#D65A31", color: "#EEEEEE" }}
+                  onClick={() =>
+                    window.open(
+                      "https://covid19liveupdate.herokuapp.com/",
+                      "_blank"
+                    )
+                  }
                 >
                   Preview
                 </Button>
