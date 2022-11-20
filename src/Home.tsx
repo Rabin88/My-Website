@@ -1,79 +1,120 @@
-import { Box, Button, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+  useTheme,
+  useMediaQuery
+} from "@mui/material";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 
 const Home = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
   return (
     <Box
       id="home"
       sx={{
-        display: "flex",
-        justifyContent: "space-between",
         bgcolor: "#222831",
-        paddingLeft: "20%",
-        paddingRight: "20%"
+        paddingLeft: { sx: "10%", md: "20%" },
+        paddingRight: { sx: "10%", md: "20%" },
+        textAlign: "center"
       }}
     >
-      <Box sx={{ my: 30 }}>
-        <Box sx={{ display: "flex" }}>
-          <Typography
-            sx={{
-              fontFamily: "serif",
-              fontSize: 65,
-              fontWeight: "600",
-              marginRight: 1,
-              color: "#EEEEEE"
-            }}
-          >
-            Hi, I'm
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "serif",
-              fontSize: 65,
-              fontWeight: "600",
-              color: "#D65A31"
-            }}
-          >
-            Rabin
-          </Typography>
-        </Box>
-        <Typography
-          sx={{
-            fontFamily: "serif",
-            fontSize: 40,
-            fontWeight: "520",
-            color: "#EEEEEE"
-          }}
-        >
-          Front-End Developer
-        </Typography>
-        <a
-          href="/RabinCV.pdf"
-          download="RabinCV"
-          style={{ textDecoration: "none" }}
-        >
-          <Button
-            sx={{
-              my: 2,
-              bgcolor: "#D65A31",
-              borderRadius: 5,
-              mx: 10
-            }}
-            variant="contained"
-            size="large"
-            startIcon={<FileDownloadOutlinedIcon />}
-          >
-            Resume
-          </Button>
-        </a>
-      </Box>
-      <img
-        src="/rabin_pun.jpeg"
-        alt="Profile Pic"
-        width="400"
-        height="400"
-        style={{ borderRadius: 200, marginTop: 160 }}
-      />
+      <Grid
+        container
+        spacing={{ sx: 2 }}
+        sx={{ my: { sx: 10, md: 20 } }}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Grid item xs={12} sm={12} md={6}>
+          <Stack direction={{ xs: "column", md: "row" }}>
+            <Typography
+              sx={{
+                fontFamily: "serif",
+                fontSize: isMobile || isIpad ? 45 : 65,
+                fontWeight: "600",
+                marginRight: 1,
+                color: "#EEEEEE"
+              }}
+            >
+              Hi, I'm
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "serif",
+                fontSize: isMobile || isIpad ? 45 : 65,
+                fontWeight: "600",
+                color: "#D65A31"
+              }}
+            >
+              Rabin
+            </Typography>
+          </Stack>
+          <Stack direction="column" textAlign={{ sx: "center", md: "left" }}>
+            <Typography
+              sx={{
+                fontFamily: "serif",
+                fontSize: isMobile || isIpad ? 35 : 40,
+                fontWeight: "520",
+                color: "#EEEEEE"
+              }}
+            >
+              Front-End Developer
+            </Typography>
+            <a
+              href="/RabinCV.pdf"
+              download="RabinCV"
+              style={{ textDecoration: "none" }}
+            >
+              <Button
+                sx={{
+                  my: 2,
+                  bgcolor: "#D65A31",
+                  borderRadius: 5,
+                  mx: 10
+                }}
+                variant="contained"
+                size={isMobile ? "medium" : "large"}
+                startIcon={<FileDownloadOutlinedIcon />}
+              >
+                Resume
+              </Button>
+            </a>
+          </Stack>
+        </Grid>
+        {isMobile || isIpad ? (
+          <Grid item xs={12} sm={12} md={6} textAlign="center" sx={{ my: 3 }}>
+            <img
+              src="/rabin_pun.jpeg"
+              alt="Profile Pic"
+              width="300"
+              height="300"
+              style={{
+                borderRadius: "50%"
+              }}
+            />
+          </Grid>
+        ) : (
+          <Grid item xs={12} sm={12} md={6} textAlign="right">
+            <img
+              src="/rabin_pun.jpeg"
+              alt="Profile Pic"
+              width="400"
+              height="400"
+              style={{
+                borderRadius: "50%"
+              }}
+            />
+          </Grid>
+        )}
+      </Grid>
     </Box>
   );
 };

@@ -9,7 +9,9 @@ import {
   TextField,
   Alert,
   Snackbar,
-  AlertTitle
+  AlertTitle,
+  useTheme,
+  useMediaQuery
 } from "@mui/material";
 import dotenv from "dotenv";
 
@@ -20,6 +22,9 @@ import * as Yup from "yup";
 
 const Contact = () => {
   const form = useRef<any>();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
   const [validateName, setValidateName] = useState(false);
   const [validateEmail, setValidateEmail] = useState(false);
@@ -84,15 +89,16 @@ const Contact = () => {
     <Box
       id="contact"
       sx={{
-        paddingLeft: "20%",
-        paddingRight: "20%",
-        bgcolor: "#393E46"
+        bgcolor: "#393E46",
+        paddingLeft: { sx: "10%", md: "20%" },
+        paddingRight: { sx: "10%", md: "20%" }
       }}
     >
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
-          fontSize: 65,
+          fontSize: isMobile ? 40 : 65,
           fontWeight: "600",
           color: "#EEEEEE"
         }}
@@ -101,6 +107,7 @@ const Contact = () => {
       </Typography>
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
           fontSize: 20,
           fontWeight: "200",
@@ -184,21 +191,27 @@ const Contact = () => {
         <Card>
           <CardContent
             sx={{
-              alignItems: "center",
-              padding: 5,
+              alignItems: { xs: "left", md: "center" },
+              padding: { sx: 0, md: 5 },
               display: "flex",
               flexDirection: "column",
               bgcolor: "rgba(198,201,216,.75)"
             }}
           >
             {submit && error && (
-              <Alert sx={{ width: "48%" }} severity="error">
+              <Alert
+                sx={{
+                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
+                  color: "red"
+                }}
+                severity="error"
+              >
                 <AlertTitle>Error</AlertTitle>
                 Oops! Something is wrong. Please try again.
               </Alert>
             )}
             <TextField
-              sx={{ width: "50%", my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
               id="username"
               name="username"
               type="text"
@@ -207,12 +220,18 @@ const Contact = () => {
               onChange={() => setValidateName(false)}
             />
             {validateName && (
-              <Alert sx={{ width: "48%" }} severity="error">
-                Please Enter Your Name!
+              <Alert
+                sx={{
+                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
+                  color: "red"
+                }}
+                severity="error"
+              >
+                Please Enter Your Name !
               </Alert>
             )}
             <TextField
-              sx={{ width: "50%", my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
               id="email"
               name="email"
               type="text"
@@ -221,12 +240,18 @@ const Contact = () => {
               onChange={() => setValidateEmail(false)}
             />
             {validateEmail && (
-              <Alert sx={{ width: "48%" }} severity="error">
-                Please Enter Your Email!
+              <Alert
+                sx={{
+                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
+                  color: "red"
+                }}
+                severity="error"
+              >
+                Please Enter Your Email !
               </Alert>
             )}
             <TextField
-              sx={{ width: "50%", my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
               id="subject"
               name="subject"
               type="text"
@@ -234,7 +259,7 @@ const Contact = () => {
               variant="outlined"
             />
             <TextField
-              sx={{ width: "50%", my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
               multiline
               rows={5}
               id="message"
@@ -247,7 +272,6 @@ const Contact = () => {
               sx={{
                 my: 2,
                 bgcolor: "#D65A31",
-                // borderRadius: 5,
                 mx: 10
               }}
               size="large"

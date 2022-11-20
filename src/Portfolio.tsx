@@ -4,24 +4,31 @@ import {
   Card,
   CardContent,
   Grid,
-  Typography
+  Typography,
+  useTheme,
+  useMediaQuery
 } from "@mui/material";
 
 const Portfolio = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
   return (
     <Box
       id="portfolio"
       sx={{
         my: 5,
-        paddingLeft: "20%",
-        paddingRight: "20%",
-        bgcolor: "#222831"
+        bgcolor: "#222831",
+        paddingLeft: { sx: "10%", md: "20%" },
+        paddingRight: { sx: "10%", md: "20%" }
       }}
     >
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
-          fontSize: 65,
+          fontSize: isMobile ? 40 : 65,
           fontWeight: "600",
           color: "#EEEEEE"
         }}
@@ -30,6 +37,7 @@ const Portfolio = () => {
       </Typography>
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
           fontSize: 20,
           fontWeight: "200",
@@ -49,7 +57,7 @@ const Portfolio = () => {
           <Grid item xs={12} sm={12} md={4}>
             <Card
               sx={{
-                minHeight: 400,
+                minHeight: isMobile ? 300 : 400,
                 textAlign: "center",
                 bgcolor: "#393E46",
                 color: "#EEEEEE"
@@ -78,7 +86,7 @@ const Portfolio = () => {
           <Grid item xs={12} sm={12} md={4}>
             <Card
               sx={{
-                minHeight: 400,
+                minHeight: isMobile ? 300 : 400,
                 textAlign: "center",
                 bgcolor: "#393E46",
                 color: "#EEEEEE"
@@ -108,7 +116,7 @@ const Portfolio = () => {
           <Grid item xs={12} sm={12} md={4}>
             <Card
               sx={{
-                minHeight: 400,
+                minHeight: isMobile ? 300 : 400,
                 textAlign: "center",
                 bgcolor: "#393E46",
                 color: "#EEEEEE"

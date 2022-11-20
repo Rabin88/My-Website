@@ -1,8 +1,20 @@
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Box,
+  Tab,
+  Tabs,
+  Typography,
+  useTheme,
+  useMediaQuery
+} from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import React, { useState } from "react";
+import { Padding } from "@mui/icons-material";
 
 const About = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
   const [activeTab, setActiveTab] = useState("skills");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -13,15 +25,16 @@ const About = () => {
     <Box
       id="about"
       sx={{
-        paddingLeft: "20%",
-        paddingRight: "20%",
-        bgcolor: "#393E46"
+        bgcolor: "#393E46",
+        paddingLeft: { sx: "10%", md: "20%" },
+        paddingRight: { sx: "10%", md: "20%" }
       }}
     >
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
-          fontSize: 65,
+          fontSize: isMobile ? 40 : 65,
           fontWeight: "600",
           color: "#EEEEEE"
         }}
@@ -30,6 +43,7 @@ const About = () => {
       </Typography>
       <Typography
         sx={{
+          marginLeft: 1,
           fontFamily: "serif",
           fontSize: 20,
           fontWeight: "200",
@@ -41,6 +55,8 @@ const About = () => {
       <TabContext value={activeTab}>
         <Box
           sx={{
+            margin: "auto",
+            width: "95%",
             borderBottom: 0.5,
             borderColor: "rgba(198,201,216,.75)"
           }}
@@ -50,6 +66,13 @@ const About = () => {
             sx={{
               "& .MuiTabs-indicator": {
                 bgcolor: "#D65A31"
+              },
+              "& .MuiTabs-flexContainer ": {
+                display: "flex",
+                justifyContent: "center",
+                [theme.breakpoints.down("sm")]: {
+                  flexDirection: "column"
+                }
               }
             }}
             onChange={handleChange}
@@ -57,8 +80,8 @@ const About = () => {
           >
             <Tab
               sx={{
-                fontSize: 17,
-                marginRight: "20%",
+                fontSize: isMobile ? 14 : 18,
+                marginRight: { sx: 0, sm: "12%", md: "20%" },
                 color: "#EEEEEE",
                 "&.Mui-selected": {
                   color: "#D65A31"
@@ -69,8 +92,8 @@ const About = () => {
             />
             <Tab
               sx={{
-                fontSize: 17,
-                marginRight: "20%",
+                fontSize: isMobile ? 14 : 18,
+                marginRight: { sx: 0, sm: "12%", md: "20%" },
                 color: "#EEEEEE",
                 "&.Mui-selected": {
                   color: "#D65A31"
@@ -81,7 +104,7 @@ const About = () => {
             />
             <Tab
               sx={{
-                fontSize: 17,
+                fontSize: isMobile ? 14 : 18,
                 color: "#EEEEEE",
                 "&.Mui-selected": {
                   color: "#D65A31"
@@ -93,36 +116,87 @@ const About = () => {
           </Tabs>
         </Box>
         <TabPanel value="skills">
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Web Development
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             React / Node
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Javascript / Typescript
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Material UI
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             MySQL
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Bitbucket / Github
           </Typography>
         </TabPanel>
         <TabPanel sx={{ color: "rgba(198,201,216,.75)" }} value="experience">
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Junior Web Developer - Keyloop, Reading
           </Typography>
           <Typography
-            sx={{ marginBottom: 2, color: "rgba(198,201,216,.75)" }}
-            variant="subtitle1"
+            sx={{
+              marginBottom: 2,
+              color: "rgba(198,201,216,.75)",
+              fontSize: 16
+            }}
           >
             Jan 2020 - Current
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Software Engineer - Vodafone, Newbury
           </Typography>
           <Typography
@@ -133,26 +207,50 @@ const About = () => {
           </Typography>
         </TabPanel>
         <TabPanel value="education">
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Msc in Computer Science - Univeristy of Birmingham
           </Typography>
           <Typography
-            sx={{ marginBottom: 2, color: "rgba(198,201,216,.75)" }}
-            variant="subtitle1"
+            sx={{
+              marginBottom: 2,
+              color: "rgba(198,201,216,.75)",
+              fontSize: 16
+            }}
           >
             2018 - 2019 Grade: Merit (67%)
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
             Bsc in Nutrition - Oxford Brookes University{" "}
           </Typography>
           <Typography
-            sx={{ marginBottom: 2, color: "rgba(198,201,216,.75)" }}
-            variant="subtitle1"
+            sx={{
+              marginBottom: 2,
+              color: "rgba(198,201,216,.75)",
+              fontSize: 16
+            }}
           >
             2011 - 2014 Grade: Upper First Class (67%)
           </Typography>
-          <Typography sx={{ color: "rgba(198,201,216,.75)" }} variant="h6">
-            A Level / GCSEs - Reading College{" "}
+          <Typography
+            sx={{
+              color: "rgba(198,201,216,.75)",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
+            A Level - Reading College{" "}
           </Typography>
           <Typography
             sx={{ color: "rgba(198,201,216,.75)" }}
