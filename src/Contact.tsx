@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   Box,
   Button,
@@ -11,20 +11,20 @@ import {
   Snackbar,
   AlertTitle,
   useTheme,
-  useMediaQuery
-} from "@mui/material";
-import dotenv from "dotenv";
+  useMediaQuery,
+} from '@mui/material';
+import dotenv from 'dotenv';
 
 // Form Validation
-import { Form, Formik, Field } from "formik";
+import { Form, Formik, Field } from 'formik';
 // import { TextField } from "formik-mui";
-import * as Yup from "yup";
+import * as Yup from 'yup';
 
 const Contact = () => {
   const form = useRef<any>();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isIpad = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
   const [validateName, setValidateName] = useState(false);
   const [validateEmail, setValidateEmail] = useState(false);
@@ -46,15 +46,15 @@ const Contact = () => {
     const YOUR_TEMPLATE_ID = process.env.REACT_APP_YOUR_TEMPLATE_ID;
     const YOUR_PUBLIC_KEY = process.env.REACT_APP_YOUR_PUBLIC_KEY;
 
-    if (form.current[0].value === "") {
+    if (form.current[0].value === '') {
       setValidateName(true);
     }
-    if (form.current[2].value === "") {
+    if (form.current[2].value === '') {
       setValidateEmail(true);
     }
 
-    if (!(form.current[0].value === "") && !(form.current[2].value === "")) {
-      console.log("sent");
+    if (!(form.current[0].value === '') && !(form.current[2].value === '')) {
+      console.log('sent');
       setSubmit(true);
       emailjs
         .sendForm(
@@ -68,9 +68,9 @@ const Contact = () => {
             setSuccess(true);
             setOpen(true);
             // @ts-ignore
-            document.getElementById("myform").reset();
+            document.getElementById('myform').reset();
             console.log(result.text);
-            console.log("message sent successfully.");
+            console.log('message sent successfully.');
           },
           (error: any) => {
             setError(true);
@@ -87,20 +87,20 @@ const Contact = () => {
 
   return (
     <Box
-      id="contact"
+      id='contact'
       sx={{
-        bgcolor: "#393E46",
-        paddingLeft: { sx: "10%", md: "20%" },
-        paddingRight: { sx: "10%", md: "20%" }
+        bgcolor: '#393E46',
+        paddingLeft: { sx: '10%', md: '13%' },
+        paddingRight: { sx: '10%', md: '13%' },
       }}
     >
       <Typography
         sx={{
           marginLeft: 1,
-          fontFamily: "serif",
+          fontFamily: 'serif',
           fontSize: isMobile ? 40 : 65,
-          fontWeight: "600",
-          color: "#EEEEEE"
+          fontWeight: '600',
+          color: '#EEEEEE',
         }}
       >
         Contact
@@ -108,10 +108,10 @@ const Contact = () => {
       <Typography
         sx={{
           marginLeft: 1,
-          fontFamily: "serif",
+          fontFamily: 'serif',
           fontSize: 20,
-          fontWeight: "200",
-          color: "rgba(198,201,216,.75)"
+          fontWeight: '200',
+          color: 'rgba(198,201,216,.75)',
         }}
       >
         This is a contact section.
@@ -187,110 +187,110 @@ const Contact = () => {
           </Form>
         )}
       </Formik> */}
-      <form id="myform" ref={form} onSubmit={handleSubmit}>
+      <form id='myform' ref={form} onSubmit={handleSubmit}>
         <Card>
           <CardContent
             sx={{
-              alignItems: { xs: "left", md: "center" },
+              alignItems: { xs: 'left', md: 'center' },
               padding: { sx: 0, md: 5 },
-              display: "flex",
-              flexDirection: "column",
-              bgcolor: "rgba(198,201,216,.75)"
+              display: 'flex',
+              flexDirection: 'column',
+              bgcolor: 'rgba(198,201,216,.75)',
             }}
           >
             {submit && error && (
               <Alert
                 sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
+                  width: isMobile ? '91%' : isIpad ? '96%' : '48%',
+                  color: 'red',
                 }}
-                severity="error"
+                severity='error'
               >
                 <AlertTitle>Error</AlertTitle>
                 Oops! Something is wrong. Please try again.
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
-              id="username"
-              name="username"
-              type="text"
-              label="Your Name*"
-              variant="outlined"
+              sx={{ minWidth: { sx: '100%', md: '50%' }, my: 1.5 }}
+              id='username'
+              name='username'
+              type='text'
+              label='Your Name*'
+              variant='outlined'
               onChange={() => setValidateName(false)}
             />
             {validateName && (
               <Alert
                 sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
+                  width: isMobile ? '91%' : isIpad ? '96%' : '48%',
+                  color: 'red',
                 }}
-                severity="error"
+                severity='error'
               >
                 Please Enter Your Name !
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
-              id="email"
-              name="email"
-              type="text"
-              label="Your Email*"
-              variant="outlined"
+              sx={{ minWidth: { sx: '100%', md: '50%' }, my: 1.5 }}
+              id='email'
+              name='email'
+              type='text'
+              label='Your Email*'
+              variant='outlined'
               onChange={() => setValidateEmail(false)}
             />
             {validateEmail && (
               <Alert
                 sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
+                  width: isMobile ? '91%' : isIpad ? '96%' : '48%',
+                  color: 'red',
                 }}
-                severity="error"
+                severity='error'
               >
                 Please Enter Your Email !
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
-              id="subject"
-              name="subject"
-              type="text"
-              label="Subject"
-              variant="outlined"
+              sx={{ minWidth: { sx: '100%', md: '50%' }, my: 1.5 }}
+              id='subject'
+              name='subject'
+              type='text'
+              label='Subject'
+              variant='outlined'
             />
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
+              sx={{ minWidth: { sx: '100%', md: '50%' }, my: 1.5 }}
               multiline
               rows={5}
-              id="message"
-              name="message"
-              type="text"
-              placeholder="Your Message ..."
-              label="Message"
+              id='message'
+              name='message'
+              type='text'
+              placeholder='Your Message ...'
+              label='Message'
             />
             <Button
               sx={{
                 my: 2,
-                bgcolor: "#D65A31",
-                mx: 10
+                bgcolor: '#D65A31',
+                mx: 10,
               }}
-              size="large"
-              variant="contained"
-              type="submit"
+              size='large'
+              variant='contained'
+              type='submit'
             >
               Submit
             </Button>
             {success && (
               <Snackbar
-                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
                 open={open}
                 autoHideDuration={6000}
                 onClose={handleClose}
               >
                 <Alert
                   onClose={handleClose}
-                  severity="success"
-                  sx={{ width: "100%" }}
+                  severity='success'
+                  sx={{ width: '100%' }}
                 >
                   Message successfully sent!
                 </Alert>
