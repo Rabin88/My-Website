@@ -90,8 +90,8 @@ const Contact = () => {
       id="contact"
       sx={{
         bgcolor: "#393E46",
-        paddingLeft: { sx: "10%", md: "13%", lg: "22%" },
-        paddingRight: { sx: "10%", md: "13%", lg: "22%" }
+        paddingLeft: { sx: "10%", md: "13%", lg: "12%" },
+        paddingRight: { sx: "10%", md: "13%", lg: "12%" }
       }}
     >
       <Typography

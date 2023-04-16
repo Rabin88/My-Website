@@ -89,8 +89,8 @@ const NavBar = () => {
           alignItems: "center",
           padding: { sx: 2, md: 5 },
           bgcolor: "#222831",
-          paddingLeft: { sx: "10%", md: "13%", lg: "22%" },
-          paddingRight: { sx: "10%", md: "13%", lg: "22%" }
+          paddingLeft: { sx: "10%", md: "13%", lg: "12%" },
+          paddingRight: { sx: "10%", md: "13%", lg: "12%" }
         }}
       >
         <Typography
