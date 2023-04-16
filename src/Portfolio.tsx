@@ -143,12 +143,16 @@ const Portfolio = () => {
                   variant="subtitle1"
                   sx={{ color: "rgba(198,201,216,.75)" }}
                 >
-                  Comming soon ...
+                  Shoezone is an ecommerce web app
                 </Typography>
+
                 <Button
                   variant="outlined"
                   size="large"
                   sx={{ my: 4, bgcolor: "#D65A31", color: "#EEEEEE" }}
+                  onClick={() =>
+                    window.open(" https://shoezonehub.netlify.app", "_blank")
+                  }
                 >
                   Preview
                 </Button>

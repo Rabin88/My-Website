@@ -235,7 +235,7 @@ const Contact = () => {
               sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
               id="email"
               name="email"
-              type="text"
+              type="email"
               label="Your Email *"
               variant="outlined"
               onChange={() => setValidateEmail(false)}

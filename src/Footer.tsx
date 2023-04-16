@@ -13,7 +13,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 
-const Copyright = () => {
+const Footer = () => {
+  const date = new Date().getFullYear();
   return (
     <Box
       id="contact"
@@ -72,10 +73,10 @@ const Copyright = () => {
           color: "rgba(198,201,216,.75)"
         }}
       >
-        Copyright © 2022 - Rabin Pun. All Rights Reserved.
+        Copyright © {date} - Rabin Pun. All Rights Reserved.
       </Typography>
     </Box>
   );
 };
 
-export { Copyright };
+export { Footer };

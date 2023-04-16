@@ -5,7 +5,7 @@ import { NavBar } from "./NavBar";
 import { About } from "./About";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
-import { Copyright } from "./Copyright";
+import { Footer } from "./Footer";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
         <About />
         <Portfolio />
         <Contact />
-        <Copyright />
+        <Footer />
       </Box>
     </ThemeProvider>
   );
