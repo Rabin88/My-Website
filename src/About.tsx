@@ -50,9 +50,12 @@ const About = () => {
           color: "rgba(198,201,216,.75)"
         }}
       >
-        Competent web developer with 3 years of experience and have a good
-        understanding of Software Development Life cycle. Highly organised, self
-        motivated and possionate in learning new technology.
+        Technically competent and result-oriented with over 3 years of
+        experience in web development using React and Node. Migrated legacy web
+        portals into modern tech stacks that reduced the technical debt. Always
+        keen to learn modern tech frameworks and problem solving techniques.
+        Currently, seeking for a mid-level developer role in a fast-paced tech
+        company that offers a good career progression.
       </Typography>
       <TabContext value={activeTab}>
         <Box
@@ -120,7 +123,7 @@ const About = () => {
         <TabPanel value="skills">
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
@@ -129,16 +132,16 @@ const About = () => {
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
           >
-            React / Node
+            React / Node / AWS
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
@@ -147,36 +150,45 @@ const About = () => {
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
           >
-            Material UI
+            Material UI(MUI) / React Query
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
           >
-            MySQL
+            MySQL / Oracle
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
           >
-            Bitbucket / Github
+            Github / Bitbucket
+          </Typography>
+          <Typography
+            sx={{
+              color: "#EEEEEE",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
+            Salesforce
           </Typography>
         </TabPanel>
         <TabPanel sx={{ color: "rgba(198,201,216,.75)" }} value="experience">
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
@@ -194,12 +206,12 @@ const About = () => {
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
           >
-            Software Engineer - Vodafone, Newbury
+            Graduate Software Engineer - Tata Consultancy Services (TCS)
           </Typography>
           <Typography
             sx={{ color: "rgba(198,201,216,.75)" }}
@@ -211,7 +223,7 @@ const About = () => {
         <TabPanel value="education">
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
@@ -229,7 +241,7 @@ const About = () => {
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}
@@ -243,11 +255,11 @@ const About = () => {
               fontSize: 16
             }}
           >
-            2011 - 2014 Grade: Upper First Class (67%)
+            2011 - 2014 Grade: Upper Second Class (67%)
           </Typography>
           <Typography
             sx={{
-              color: "rgba(198,201,216,.75)",
+              color: "#EEEEEE",
               fontSize: isMobile ? 16 : 19,
               fontWeight: 600
             }}

@@ -107,7 +107,7 @@ const Portfolio = () => {
                   variant="subtitle1"
                   sx={{ color: "rgba(198,201,216,.75)" }}
                 >
-                  My first web app developemnt during covid period using public
+                  My first web app development during covid period using public
                   API.
                 </Typography>
                 <Button

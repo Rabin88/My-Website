@@ -28,7 +28,7 @@ const Home = () => {
       <Grid
         container
         spacing={{ sx: 2 }}
-        sx={{ my: { sx: 10, md: 20 } }}
+        sx={{ my: { sx: 10, md: 13 } }}
         display="flex"
         justifyContent="space-between"
         alignItems="center"
@@ -57,7 +57,11 @@ const Home = () => {
               Rabin
             </Typography>
           </Stack>
-          <Stack direction="column" textAlign={{ sx: "center", md: "left" }}>
+          <Stack
+            direction="column"
+            textAlign={{ sx: "center", md: "left" }}
+            marginLeft={{ md: 6 }}
+          >
             <Typography
               sx={{
                 fontFamily: "serif",
@@ -66,11 +70,11 @@ const Home = () => {
                 color: "#EEEEEE"
               }}
             >
-              Front-End Developer
+              Web Developer
             </Typography>
             <a
-              href="/RabinCV.pdf"
-              download="RabinCV"
+              href="/Rabin CV.pdf"
+              download="Rabin CV"
               style={{ textDecoration: "none" }}
             >
               <Button
@@ -78,7 +82,7 @@ const Home = () => {
                   my: 2,
                   bgcolor: "#D65A31",
                   borderRadius: 5,
-                  mx: 10
+                  mx: 7
                 }}
                 variant="contained"
                 size={isMobile ? "medium" : "large"}
@@ -92,7 +96,7 @@ const Home = () => {
         {isMobile || isIpad ? (
           <Grid item xs={12} sm={12} md={6} textAlign="center" sx={{ my: 3 }}>
             <img
-              src="/rabin_pun.jpeg"
+              src="/profile_pic.png"
               alt="Profile Pic"
               width="300"
               height="300"
@@ -104,10 +108,10 @@ const Home = () => {
         ) : (
           <Grid item xs={12} sm={12} md={6} textAlign="right">
             <img
-              src="/rabin_pun.jpeg"
+              src="/profile_pic.png"
               alt="Profile Pic"
-              width="400"
-              height="400"
+              width="350"
+              height="350"
               style={{
                 borderRadius: "50%"
               }}
