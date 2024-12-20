@@ -50,12 +50,10 @@ const About = () => {
           color: "rgba(198,201,216,.75)"
         }}
       >
-        Technically competent and result-oriented with over 3 years of
+        Technically competent and result-oriented with over 4 years of
         experience in web development using React and Node. Migrated legacy web
         portals into modern tech stacks that reduced the technical debt. Always
         keen to learn modern tech frameworks and problem solving techniques.
-        Currently, seeking for a mid-level developer role in a fast-paced tech
-        company that offers a good career progression.
       </Typography>
       <TabContext value={activeTab}>
         <Box
@@ -137,7 +135,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            React / Node / AWS
+            React / Node / Serverless / AWS
           </Typography>
           <Typography
             sx={{
@@ -155,7 +153,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Material UI(MUI) / React Query
+            Material UI(MUI) / React Query / React E-Charts
           </Typography>
           <Typography
             sx={{
@@ -184,6 +182,15 @@ const About = () => {
           >
             Salesforce
           </Typography>
+          <Typography
+            sx={{
+              color: "#EEEEEE",
+              fontSize: isMobile ? 16 : 19,
+              fontWeight: 600
+            }}
+          >
+            Scrum
+          </Typography>
         </TabPanel>
         <TabPanel sx={{ color: "rgba(198,201,216,.75)" }} value="experience">
           <Typography
@@ -193,7 +200,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Junior Web Developer - Keyloop, Reading
+            Web Developer - Keyloop, Reading
           </Typography>
           <Typography
             sx={{
@@ -202,7 +209,7 @@ const About = () => {
               fontSize: 16
             }}
           >
-            Jan 2020 - Current
+            Jan 2021 - Present
           </Typography>
           <Typography
             sx={{
