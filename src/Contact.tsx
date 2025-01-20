@@ -68,7 +68,12 @@ const Contact = () => {
             setSuccess(true);
             setOpen(true);
             // @ts-ignore
-            document.getElementById("myform").reset();
+            document.getElementById("myform").reset({
+              username: "",
+              email: "",
+              subject: "",
+              message: ""
+            });
             console.log(result.text);
             console.log("message sent successfully.");
           },
@@ -208,7 +213,7 @@ const Contact = () => {
                 severity="error"
               >
                 <AlertTitle>Error</AlertTitle>
-                Oops! Something is wrong. Please try again.
+                Oops! Something went wrong. Please try again.
               </Alert>
             )}
             <TextField
