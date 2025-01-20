@@ -66,6 +66,71 @@ const Portfolio = () => {
             >
               <CardContent sx={{ marginTop: "20%" }}>
                 <Typography variant="h6" sx={{ my: 2 }}>
+                  Ecommerce App
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ color: "rgba(198,201,216,.75)" }}
+                >
+                  Shoezone is an ecommerce web app
+                </Typography>
+
+                <Button
+                  variant="outlined"
+                  size="large"
+                  sx={{ my: 4, bgcolor: "#D65A31", color: "#EEEEEE" }}
+                  onClick={() =>
+                    window.open(" https://shoezonehub.netlify.app", "_blank")
+                  }
+                >
+                  Preview
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            <Card
+              sx={{
+                minHeight: isMobile ? 300 : 400,
+                textAlign: "center",
+                bgcolor: "#393E46",
+                color: "#EEEEEE"
+              }}
+            >
+              <CardContent sx={{ marginTop: "50%" }}>
+                <Typography variant="h6" sx={{ my: 2 }}>
+                  Coming soon!
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            <Card
+              sx={{
+                minHeight: isMobile ? 300 : 400,
+                textAlign: "center",
+                bgcolor: "#393E46",
+                color: "#EEEEEE"
+              }}
+            >
+              <CardContent sx={{ marginTop: "50%" }}>
+                <Typography variant="h6" sx={{ my: 2 }}>
+                  Coming soon!
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          {/* <Grid item xs={12} sm={12} md={4}>
+            <Card
+              sx={{
+                minHeight: isMobile ? 300 : 400,
+                textAlign: "center",
+                bgcolor: "#393E46",
+                color: "#EEEEEE"
+              }}
+            >
+              <CardContent sx={{ marginTop: "20%" }}>
+                <Typography variant="h6" sx={{ my: 2 }}>
                   Personal Website
                 </Typography>
                 <Typography
@@ -90,6 +155,7 @@ const Portfolio = () => {
               </CardContent>
             </Card>
           </Grid>
+
           <Grid item xs={12} sm={12} md={4}>
             <Card
               sx={{
@@ -125,40 +191,7 @@ const Portfolio = () => {
                 </Button>
               </CardContent>
             </Card>
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            <Card
-              sx={{
-                minHeight: isMobile ? 300 : 400,
-                textAlign: "center",
-                bgcolor: "#393E46",
-                color: "#EEEEEE"
-              }}
-            >
-              <CardContent sx={{ marginTop: "20%" }}>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Ecommerce App
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  sx={{ color: "rgba(198,201,216,.75)" }}
-                >
-                  Shoezone is an ecommerce web app
-                </Typography>
-
-                <Button
-                  variant="outlined"
-                  size="large"
-                  sx={{ my: 4, bgcolor: "#D65A31", color: "#EEEEEE" }}
-                  onClick={() =>
-                    window.open(" https://shoezonehub.netlify.app", "_blank")
-                  }
-                >
-                  Preview
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Box>
     </Box>
