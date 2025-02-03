@@ -64,7 +64,7 @@ const Portfolio = () => {
                 color: "#EEEEEE"
               }}
             >
-              <CardContent sx={{ marginTop: "20%" }}>
+              <CardContent sx={{ marginTop: isMobile ? "10%" : "20%" }}>
                 <Typography variant="h6" sx={{ my: 2 }}>
                   Ecommerce App
                 </Typography>
@@ -88,6 +88,25 @@ const Portfolio = () => {
               </CardContent>
             </Card>
           </Grid>
+          {!isMobile && (
+            <Grid item xs={12} sm={12} md={4}>
+              <Card
+                sx={{
+                  minHeight: isMobile ? 300 : 400,
+                  textAlign: "center",
+                  bgcolor: "#393E46",
+                  color: "#EEEEEE"
+                }}
+              >
+                <CardContent sx={{ marginTop: "50%" }}>
+                  <Typography variant="h6" sx={{ my: 2 }}>
+                    Coming soon!
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          )}
+
           <Grid item xs={12} sm={12} md={4}>
             <Card
               sx={{
@@ -97,25 +116,9 @@ const Portfolio = () => {
                 color: "#EEEEEE"
               }}
             >
-              <CardContent sx={{ marginTop: "50%" }}>
+              <CardContent sx={{ marginTop: isMobile ? "25%" : "50%" }}>
                 <Typography variant="h6" sx={{ my: 2 }}>
-                  Coming soon!
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            <Card
-              sx={{
-                minHeight: isMobile ? 300 : 400,
-                textAlign: "center",
-                bgcolor: "#393E46",
-                color: "#EEEEEE"
-              }}
-            >
-              <CardContent sx={{ marginTop: "50%" }}>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Coming soon!
+                  Coming soon!!!
                 </Typography>
               </CardContent>
             </Card>

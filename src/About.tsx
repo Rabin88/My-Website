@@ -45,7 +45,7 @@ const About = () => {
         sx={{
           marginLeft: 1,
           fontFamily: "serif",
-          fontSize: isMobile ? 18 : 20,
+          fontSize: isMobile ? 16 : 20,
           fontWeight: "200",
           color: "rgba(198,201,216,.75)"
         }}
@@ -123,7 +123,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -132,25 +132,25 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
-            Material UI / Formik / React Query / React E-Charts
+            Material UI / Formik / React Query / E-Charts
           </Typography>
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
-            Node.js / Express / Serverless / AWS Lambda / RESTful API
+            Node.js / Express / Serverless / AWS / REST API
           </Typography>
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -159,7 +159,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -168,7 +168,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -177,7 +177,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -188,7 +188,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -206,7 +206,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -223,7 +223,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -241,7 +241,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
@@ -259,7 +259,7 @@ const About = () => {
           <Typography
             sx={{
               color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
+              fontSize: isMobile ? 14 : 19,
               fontWeight: 600
             }}
           >
