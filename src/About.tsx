@@ -51,9 +51,10 @@ const About = () => {
         }}
       >
         Technically competent and result-oriented with over 4 years of
-        experience in web development using React and Node. Migrated legacy web
-        portals into modern tech stacks that reduced the technical debt. Always
-        keen to learn modern tech frameworks and problem solving techniques.
+        experience in building scalable web applications using React and Node.
+        Migrated legacy web applications into modern tech stacks that reduced
+        the technical debt. Always keen to learn modern tech frameworks and
+        problem solving techniques.
       </Typography>
       <TabContext value={activeTab}>
         <Box
@@ -126,7 +127,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Web Applications
+            Javascript / Typescript/ React.js / Next.js
           </Typography>
           <Typography
             sx={{
@@ -135,7 +136,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            React / Node / Serverless / AWS
+            Material UI / Formik / React Query / React E-Charts
           </Typography>
           <Typography
             sx={{
@@ -144,7 +145,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Javascript / Typescript
+            Node.js / Express / Serverless / AWS Lambda / RESTful API
           </Typography>
           <Typography
             sx={{
@@ -153,7 +154,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Material UI(MUI) / React Query / React E-Charts
+            Oracle / PostgreSQL
           </Typography>
           <Typography
             sx={{
@@ -162,7 +163,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            MySQL / Oracle
+            Github Actions / Bitbucket / Jira / Confluence
           </Typography>
           <Typography
             sx={{
@@ -171,7 +172,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Github / Bitbucket
+            Salesforce / Microservices / Vercel
           </Typography>
           <Typography
             sx={{
@@ -180,16 +181,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Salesforce
-          </Typography>
-          <Typography
-            sx={{
-              color: "#EEEEEE",
-              fontSize: isMobile ? 16 : 19,
-              fontWeight: 600
-            }}
-          >
-            Scrum
+            Scrum / Kanban
           </Typography>
         </TabPanel>
         <TabPanel sx={{ color: "rgba(198,201,216,.75)" }} value="experience">
@@ -200,7 +192,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Web Developer - Keyloop, Reading
+            Full Stack Web Developer - Keyloop, Reading
           </Typography>
           <Typography
             sx={{
