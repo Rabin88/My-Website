@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# Rabin Pun — Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-page personal portfolio/CV site built with React, TypeScript, and Material UI (MUI), bundled with Vite and deployed to Netlify.
 
-## Available Scripts
+## Tech stack
 
-In the project directory, you can run:
+- [React 17](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) for dev server and bundling
+- [MUI](https://mui.com/) for components and styling
+- [EmailJS](https://www.emailjs.com/) for the contact form (no backend server)
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+Create a `.env` file in the project root with your EmailJS credentials (used by the contact form):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+VITE_YOUR_SERVICE_ID=your_service_id
+VITE_YOUR_TEMPLATE_ID=your_template_id
+VITE_YOUR_PUBLIC_KEY=your_public_key
+```
+
+## Available scripts
+
+### `npm run dev`
+
+Starts the Vite dev server at [http://localhost:4000](http://localhost:4000) and opens it in your browser. Supports hot module reloading.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Type-checks the project with `tsc` and builds the production bundle to the `dist` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Serves the production build from `dist` locally, for a final check before deploying.
 
-### `npm run eject`
+## Project structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The page is composed of section components rendered in order from `src/App.tsx`:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+NavBar → Home → About → Portfolio → Contact → Footer
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Each section lives in its own file in `src/` (e.g. `Home.tsx`, `About.tsx`) and owns a DOM id (`#home`, `#about`, etc.) that the nav bar links to via in-page anchors — there's no router.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Static assets (profile picture, CV, favicon) are served from `public/`.
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The site is deployed via Netlify. Node version is pinned in `.nvmrc` to match the Netlify build environment.
