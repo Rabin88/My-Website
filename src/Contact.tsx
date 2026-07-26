@@ -42,9 +42,9 @@ const Contact = () => {
 
     // Check Error Message If Service ID is wrong
     // const APP_YOUR_SERVICE_ID = "asdasd";
-    const APP_YOUR_SERVICE_ID = process.env.REACT_APP_YOUR_SERVICE_ID;
-    const YOUR_TEMPLATE_ID = process.env.REACT_APP_YOUR_TEMPLATE_ID;
-    const YOUR_PUBLIC_KEY = process.env.REACT_APP_YOUR_PUBLIC_KEY;
+    const APP_YOUR_SERVICE_ID = import.meta.env.VITE_YOUR_SERVICE_ID;
+    const YOUR_TEMPLATE_ID = import.meta.env.VITE_YOUR_TEMPLATE_ID;
+    const YOUR_PUBLIC_KEY = import.meta.env.VITE_YOUR_PUBLIC_KEY;
 
     if (form.current[0].value === "") {
       setValidateName(true);
