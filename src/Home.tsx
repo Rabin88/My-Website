@@ -70,7 +70,7 @@ const Home = () => {
                 color: "#EEEEEE"
               }}
             >
-              Web Developer
+              Full Stack Developer
             </Typography>
             <a
               href="/Rabin CV.pdf"

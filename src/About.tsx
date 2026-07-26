@@ -6,14 +6,12 @@ import {
   useTheme,
   useMediaQuery
 } from "@mui/material";
-import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { TabContext, TabPanel } from "@mui/lab";
 import React, { useState } from "react";
-import { Padding } from "@mui/icons-material";
 
 const About = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isIpad = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
   const [activeTab, setActiveTab] = useState("skills");
 
@@ -50,11 +48,16 @@ const About = () => {
           color: "rgba(198,201,216,.75)"
         }}
       >
-        Technically competent and result-oriented with over 4 years of
-        experience in building scalable web applications using React and Node.
-        Migrated legacy web applications into modern tech stacks that reduced
-        the technical debt. Always keen to learn modern tech frameworks and
-        problem solving techniques.
+        Full Stack Developer with 5+ years' experience building and owning
+        customer-facing web portals end-to-end. Currently lead development on a
+        business-critical portal at Keyloop, used by automotive dealerships
+        across the UK, Europe and Asia. Strong hands-on expertise in React,
+        Next.js, TypeScript, Node.js, PostgreSQL and AWS, with production CI/CD
+        experience. Re-platformed a legacy ExtJS portal to React + TypeScript,
+        cutting technical debt and improving performance. Early adopter of
+        AI-augmented development (Claude Code, GitHub Copilot) to accelerate
+        delivery. Actively seeking a mid-to-senior Full Stack Developer role in
+        the UK, building and owning production systems at scale.
       </Typography>
       <TabContext value={activeTab}>
         <Box
@@ -163,7 +166,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Github Actions / Bitbucket / Jira / Confluence
+            Github Actions / Jira / Confluence
           </Typography>
           <Typography
             sx={{
@@ -192,7 +195,7 @@ const About = () => {
               fontWeight: 600
             }}
           >
-            Full Stack Web Developer - Keyloop, Reading
+            Full Stack Developer - Keyloop, Reading
           </Typography>
           <Typography
             sx={{
@@ -236,7 +239,7 @@ const About = () => {
               fontSize: 16
             }}
           >
-            2018 - 2019 Grade: Merit (67%)
+            2018 - 2019 Grade: Merit
           </Typography>
           <Typography
             sx={{
@@ -254,7 +257,7 @@ const About = () => {
               fontSize: 16
             }}
           >
-            2011 - 2014 Grade: Upper Second Class (67%)
+            2011 - 2014 Grade: Upper Second Class (2:1)
           </Typography>
           <Typography
             sx={{
