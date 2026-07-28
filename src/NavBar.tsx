@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useTheme
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -41,25 +41,40 @@ const NavLink = ({
   active: boolean;
   onClick?: () => void;
   variant?: "h6" | "button";
-}) => (
-  <Link
-    sx={{
-      position: "relative",
-      color: active ? "#D65A31" : "#EEEEEE",
-      fontWeight: active ? 450 : 350,
-      transition: "color 0.2s ease",
-      "&:hover": {
-        color: "#D65A31"
-      }
-    }}
-    href={href}
-    variant={variant}
-    underline="hover"
-    onClick={onClick}
-  >
-    {label}
-  </Link>
-);
+}) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!onClick) return;
+    // Closing the mobile menu collapses the page height, which races
+    // with the browser's native anchor scroll. Close first, then scroll
+    // once the collapse animation has finished.
+    e.preventDefault();
+    onClick();
+    const id = href.replace("#", "");
+    window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  };
+
+  return (
+    <Link
+      sx={{
+        position: "relative",
+        color: active ? "#D65A31" : "#EEEEEE",
+        fontWeight: active ? 450 : 350,
+        transition: "color 0.2s ease",
+        "&:hover": {
+          color: "#D65A31"
+        }
+      }}
+      href={href}
+      variant={variant}
+      underline="hover"
+      onClick={handleClick}
+    >
+      {label}
+    </Link>
+  );
+};
 
 const Menu = ({ activeSection }: { activeSection: string }) => {
   return (
