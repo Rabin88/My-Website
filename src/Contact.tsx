@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
   Box,
@@ -13,12 +13,21 @@ import {
   useTheme,
   useMediaQuery
 } from "@mui/material";
-import dotenv from "dotenv";
+import { motion } from "framer-motion";
+import { sectionHeadingSx } from "./sectionHeading";
 
-// Form Validation
-import { Form, Formik, Field } from "formik";
-// import { TextField } from "formik-mui";
-import * as Yup from "yup";
+const MotionCard = motion.create(Card);
+
+const darkFieldSx = {
+  "& .MuiOutlinedInput-root": {
+    color: "#EEEEEE",
+    "& fieldset": { borderColor: "rgba(198,201,216,0.3)" },
+    "&:hover fieldset": { borderColor: "#D65A31" },
+    "&.Mui-focused fieldset": { borderColor: "#D65A31" }
+  },
+  "& .MuiInputLabel-root": { color: "rgba(198,201,216,0.75)" },
+  "& .MuiInputLabel-root.Mui-focused": { color: "#D65A31" }
+};
 
 const Contact = () => {
   const form = useRef<any>();
@@ -40,8 +49,6 @@ const Contact = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    // Check Error Message If Service ID is wrong
-    // const APP_YOUR_SERVICE_ID = "asdasd";
     const APP_YOUR_SERVICE_ID = import.meta.env.VITE_YOUR_SERVICE_ID;
     const YOUR_TEMPLATE_ID = import.meta.env.VITE_YOUR_TEMPLATE_ID;
     const YOUR_PUBLIC_KEY = import.meta.env.VITE_YOUR_PUBLIC_KEY;
@@ -54,7 +61,6 @@ const Contact = () => {
     }
 
     if (!(form.current[0].value === "") && !(form.current[2].value === "")) {
-      console.log("sent");
       setSubmit(true);
       emailjs
         .sendForm(
@@ -75,7 +81,6 @@ const Contact = () => {
               message: ""
             });
             console.log(result.text);
-            console.log("message sent successfully.");
           },
           (error: any) => {
             setError(true);
@@ -85,31 +90,16 @@ const Contact = () => {
     }
   };
 
-  // const validationSchema = Yup.object({
-  //   username: Yup.string().required("Please enter your fullname"),
-  //   email: Yup.string().required("Please enter your email")
-  // });
-
   return (
     <Box
       id="contact"
       sx={{
-        bgcolor: "#393E46",
+        bgcolor: "#222831",
         paddingLeft: { sx: "10%", md: "13%", lg: "12%" },
         paddingRight: { sx: "10%", md: "13%", lg: "12%" }
       }}
     >
-      <Typography
-        sx={{
-          marginLeft: 1,
-          fontFamily: "serif",
-          fontSize: isMobile ? 40 : 65,
-          fontWeight: "600",
-          color: "#EEEEEE"
-        }}
-      >
-        Contact
-      </Typography>
+      <Typography sx={sectionHeadingSx}>Contact</Typography>
       <Typography
         sx={{
           marginLeft: 1,
@@ -122,94 +112,28 @@ const Contact = () => {
       >
         Know more about me? Get in touch.
       </Typography>
-      {/* <Formik
-        // ref={form}
-        initialValues={{ username: "", email: "", subject: "", message: "" }}
-        //It control whether Formik should reset the form if initialValues changes (using deep equality)
-        validationSchema={validationSchema}
-        //when user click on Next button onSubmit will be triggered.
-        onSubmit={handleSubmit}
-      >
-        {() => (
-          <Form ref={form}>
-            <Card sx={{ padding: 5, bgcolor: "#393E46", border: "none" }}>
-              <CardContent
-                sx={{
-                  alignItems: "center",
-                  padding: 5,
-                  display: "flex",
-                  flexDirection: "column",
-                  bgcolor: "rgba(198,201,216,.75)"
-                }}
-              >
-                <Field
-                  component={TextField}
-                  sx={{ width: "50%", my: 1.5 }}
-                  id="username"
-                  name="username"
-                  label="Your Name"
-                  InputLabelProps={{ required: true }}
-                />
-
-                <Field
-                  component={TextField}
-                  sx={{ width: "50%", my: 1.5 }}
-                  id="email"
-                  name="email"
-                  label="Your Email"
-                  InputLabelProps={{ required: true }}
-                />
-                <Field
-                  component={TextField}
-                  sx={{ width: "50%", my: 1.5 }}
-                  id="subject"
-                  name="subject"
-                  label="Subject"
-                />
-                <Field
-                  component={TextField}
-                  sx={{ width: "50%", my: 1.5 }}
-                  multiline
-                  rows={5}
-                  id="message"
-                  name="message"
-                  placeholder="Your Message ..."
-                  label="Message"
-                />
-                <Button
-                  sx={{
-                    my: 2,
-                    bgcolor: "#D65A31",
-                    mx: 10
-                  }}
-                  size="large"
-                  variant="contained"
-                  type="submit"
-                >
-                  Submit
-                </Button>
-              </CardContent>
-            </Card>
-          </Form>
-        )}
-      </Formik> */}
       <form id="myform" ref={form} onSubmit={handleSubmit}>
-        <Card>
+        <MotionCard
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          sx={{
+            bgcolor: "#393E46",
+            border: "1px solid rgba(198,201,216,.15)"
+          }}
+        >
           <CardContent
             sx={{
               alignItems: { xs: "left", md: "center" },
               padding: { sx: 0, md: 5 },
               display: "flex",
-              flexDirection: "column",
-              bgcolor: "rgba(198,201,216,.75)"
+              flexDirection: "column"
             }}
           >
             {submit && error && (
               <Alert
-                sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
-                }}
+                sx={{ width: isMobile ? "91%" : isIpad ? "96%" : "48%" }}
                 severity="error"
               >
                 <AlertTitle>Error</AlertTitle>
@@ -217,7 +141,7 @@ const Contact = () => {
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5, ...darkFieldSx }}
               id="username"
               name="username"
               type="text"
@@ -227,17 +151,14 @@ const Contact = () => {
             />
             {validateName && (
               <Alert
-                sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
-                }}
+                sx={{ width: isMobile ? "91%" : isIpad ? "96%" : "48%" }}
                 severity="error"
               >
                 Please Enter Your Name !
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5, ...darkFieldSx }}
               id="email"
               name="email"
               type="email"
@@ -247,17 +168,14 @@ const Contact = () => {
             />
             {validateEmail && (
               <Alert
-                sx={{
-                  width: isMobile ? "91%" : isIpad ? "96%" : "48%",
-                  color: "red"
-                }}
+                sx={{ width: isMobile ? "91%" : isIpad ? "96%" : "48%" }}
                 severity="error"
               >
                 Please Enter Your Email !
               </Alert>
             )}
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5, ...darkFieldSx }}
               id="subject"
               name="subject"
               type="text"
@@ -265,7 +183,7 @@ const Contact = () => {
               variant="outlined"
             />
             <TextField
-              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5 }}
+              sx={{ minWidth: { sx: "100%", md: "50%" }, my: 1.5, ...darkFieldSx }}
               multiline
               rows={5}
               id="message"
@@ -275,11 +193,15 @@ const Contact = () => {
               label="Message"
             />
             <Button
+              component={motion.button}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
               sx={{
                 my: 2,
                 bgcolor: "#D65A31",
-                mx: 10,
-                borderRadius: 5
+                px: 5,
+                borderRadius: 5,
+                "&:hover": { bgcolor: "#D65A31" }
               }}
               size="large"
               variant="contained"
@@ -304,7 +226,7 @@ const Contact = () => {
               </Snackbar>
             )}
           </CardContent>
-        </Card>
+        </MotionCard>
       </form>
       <Box sx={{ minHeight: 50 }}></Box>
     </Box>

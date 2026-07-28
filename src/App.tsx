@@ -3,6 +3,9 @@ import { Box } from "@mui/material";
 import { Home } from "./Home";
 import { NavBar } from "./NavBar";
 import { About } from "./About";
+import { TechnicalSkills } from "./TechnicalSkills";
+import { Experience } from "./Experience";
+import { Education } from "./Education";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
 import { Footer } from "./Footer";
@@ -23,6 +26,9 @@ const App = () => {
         <NavBar />
         <Home />
         <About />
+        <TechnicalSkills />
+        <Experience />
+        <Education />
         <Portfolio />
         <Contact />
         <Footer />
