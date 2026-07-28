@@ -25,37 +25,28 @@ const Footer = () => {
     <Box
       id="site-footer"
       sx={{
-        paddingLeft: "20%",
-        paddingRight: "20%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        py: { xs: 0.75, md: 1.5 },
         bgcolor: "#393E46",
-        minHeight: 120,
-        my: 5,
-        textAlign: "center"
+        my: 3,
+        paddingLeft: { xs: "10%", md: "13%", lg: "12%" },
+        paddingRight: { xs: "10%", md: "13%", lg: "12%" }
       }}
     >
-      <motion.a
-        href="#home"
-        aria-label="Back to top"
-        style={{ display: "inline-flex", textDecoration: "none" }}
-        whileHover={{ y: -4 }}
-        whileTap={{ scale: 0.9 }}
+      <Typography
+        sx={{
+          fontFamily: "serif",
+          fontSize: { xs: 11, md: 13 },
+          fontWeight: "200",
+          color: "rgba(198,201,216,.75)"
+        }}
       >
-        <KeyboardArrowUpIcon
-          sx={{
-            color: "rgba(238,238,238,0.5)",
-            fontSize: 32,
-            mb: 1,
-            "&:hover": { color: "#D65A31" }
-          }}
-        />
-      </motion.a>
+        Copyright © {date} - Rabin Pun.
+      </Typography>
 
-      <Stack
-        direction="row"
-        spacing={5}
-        justifyContent="center"
-        marginBottom={1.5}
-      >
+      <Stack direction="row" spacing={2} alignItems="center">
         {socialLinks.map((social) => (
           <Link
             key={social.label}
@@ -67,21 +58,26 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label={social.label}
           >
-            <social.icon sx={{ color: "#D65A31", fontSize: 45 }} />
+            <social.icon sx={{ color: "#D65A31", fontSize: 20 }} />
           </Link>
         ))}
-      </Stack>
 
-      <Typography
-        sx={{
-          fontFamily: "serif",
-          fontSize: 17,
-          fontWeight: "200",
-          color: "rgba(198,201,216,.75)"
-        }}
-      >
-        Copyright © {date} - Rabin Pun. All Rights Reserved.
-      </Typography>
+        <motion.a
+          href="#home"
+          aria-label="Back to top"
+          style={{ display: "inline-flex", textDecoration: "none" }}
+          whileHover={{ y: -4 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <KeyboardArrowUpIcon
+            sx={{
+              color: "rgba(238,238,238,0.5)",
+              fontSize: 20,
+              "&:hover": { color: "#D65A31" }
+            }}
+          />
+        </motion.a>
+      </Stack>
     </Box>
   );
 };

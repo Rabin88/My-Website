@@ -24,15 +24,12 @@ const About = () => {
         }}
       >
         Full Stack Developer with 5+ years' experience building and owning
-        customer-facing web portals end-to-end. Currently lead development on a
-        business-critical portal at Keyloop, used by automotive dealerships
-        across the UK, Europe and Asia. Strong hands-on expertise in React,
-        Next.js, TypeScript, Node.js, PostgreSQL and AWS, with production CI/CD
-        experience. Re-platformed a legacy ExtJS portal to React + TypeScript,
-        cutting technical debt and improving performance. Early adopter of
-        AI-augmented development (Claude Code, GitHub Copilot) to accelerate
-        delivery. Actively seeking a mid-to-senior Full Stack Developer role in
-        the UK, building and owning production systems at scale.
+        customer-facing web portals end-to-end. Currently lead development of a
+        business-critical portal at Keyloop, serving the automotive retail
+        industry across the UK, Europe and Asia. Skilled in React, Next.js,
+        TypeScript, Node.js, PostgreSQL and AWS, with a strong track record
+        modernising legacy systems and driving CI/CD delivery. Actively seeking
+        a mid-to-senior Full Stack role to ship user-focused software at scale.
       </Typography>
     </Box>
   );

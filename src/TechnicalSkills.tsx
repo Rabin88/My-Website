@@ -43,12 +43,14 @@ import {
   SiGithub,
   SiGithubcopilot,
   SiClaude,
-  SiKnexdotjs
+  SiKnexdotjs,
+  SiJsonwebtokens
 } from "react-icons/si";
 import { FaAws, FaSalesforce, FaDatabase } from "react-icons/fa";
-import { MdApi, MdHub, MdGroups, MdViewColumn } from "react-icons/md";
+import { MdApi, MdHub, MdGroups, MdViewColumn, MdSecurity, MdVerifiedUser } from "react-icons/md";
 import { TbInfinity } from "react-icons/tb";
 import { RiMicrosoftCopilotFill, RiOpenaiFill } from "react-icons/ri";
+import { VscAzure } from "react-icons/vsc";
 
 const MotionCard = motion.create(Card);
 
@@ -85,7 +87,10 @@ const skillCategories: SkillCategory[] = [
       { name: "Express", icon: SiExpress },
       { name: "Serverless", icon: SiServerless },
       { name: "AWS", icon: FaAws },
-      { name: "REST API", icon: MdApi }
+      { name: "REST API", icon: MdApi },
+      { name: "OAuth", icon: MdVerifiedUser },
+      { name: "JWT", icon: SiJsonwebtokens },
+      { name: "SSO", icon: MdSecurity }
     ]
   },
   {
@@ -108,7 +113,8 @@ const skillCategories: SkillCategory[] = [
       { name: "Confluence", icon: SiConfluence },
       { name: "Vercel", icon: SiVercel },
       { name: "Salesforce", icon: FaSalesforce },
-      { name: "Microservices", icon: MdHub }
+      { name: "Microservices", icon: MdHub },
+      { name: "Azure", icon: VscAzure }
     ]
   },
   {

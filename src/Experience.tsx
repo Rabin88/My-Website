@@ -16,7 +16,7 @@ const experienceEntries: TimelineEntry[] = [
     current: true
   },
   {
-    title: "Graduate Software Engineer",
+    title: "Software Engineer",
     subtitle: "Tata Consultancy Services (TCS)",
     date: "Dec 2019 - Nov 2020"
   }
